@@ -8,9 +8,9 @@ object HelloWorld {
   
   def main(args: Array[String]) = {
     val ast = BFParser.parse(new StringReader(source))
-    //println(ast)
+    println(ast)
     val asm = BFCompiler.compile(ast)
-    //println(asm)
+    println(asm)
     val vm = new BFVM(asm)
     val t0 = System.nanoTime()
     while (vm.step()) {}
